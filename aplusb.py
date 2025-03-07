@@ -1,9 +1,13 @@
-# Demande à l'utilisateur d'entrer deux nombres
-num1 = float(input("Entrez le premier nombre : "))
-num2 = float(input("Entrez le deuxième nombre : "))
+import streamlit as st
 
-# Addition des deux nombres
-somme = num1 + num2
+# Titre de l'application
+st.title("Additionneur de deux nombres")
 
-# Affichage du résultat
-print(f"La somme de {num1} et {num2} est {somme}")
+# Entrée des nombres
+num1 = st.number_input("Entrez le premier nombre :", value=0.0)
+num2 = st.number_input("Entrez le deuxième nombre :", value=0.0)
+
+# Bouton pour effectuer l'addition
+if st.button("Additionner"):
+    resultat = num1 + num2
+    st.success(f"Résultat : {resultat}")
